@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ціни та тарифи | Volt-on-Call Київ</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root { --primary: #00ff66; --dark: #121212; --dark-card: #1e1e1e; --text: #ffffff; --text-muted: #a0a0a0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--dark); color: var(--text); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        h1, h3, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
+        header { background: rgba(18, 18, 18, 0.95); padding: 20px 0; border-bottom: 1px solid #2d2d2d; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 24px; color: var(--primary); text-decoration: none; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .pricing { padding: 80px 0; }
+        .title { text-align: center; font-size: 38px; margin-bottom: 15px; }
+        .title span { color: var(--primary); font-style: italic; }
+        .sub { text-align: center; color: var(--text-muted); margin-bottom: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--dark-card); padding: 35px 25px; border-radius: 15px; border: 1px solid #2d2d2d; text-align: center; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+        .card.hit { border-color: var(--primary); }
+        .badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--primary); color: var(--dark); padding: 4px 14px; font-size: 12px; font-weight: bold; border-radius: 20px; text-transform: uppercase; }
+        .price { font-size: 40px; font-weight: bold; color: var(--primary); margin: 15px 0 10px; }
+        .price span { font-size: 18px; color: var(--text); }
+        .desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; }
+        ul { list-style: none; text-align: left; margin-bottom: 25px; font-size: 15px; }
+        li { margin-bottom: 10px; padding-left: 22px; position: relative; }
+        li::before { content: "⚡"; position: absolute; left: 0; color: var(--primary); }
+        .btn { display: inline-block; background: var(--primary); color: var(--dark); padding: 12px 28px; border-radius: 30px; font-weight: bold; text-decoration: none; }
+        footer { background: #0b0b0b; padding: 35px 0; text-align: center; color: var(--text-muted); border-top: 1px solid #2d2d2d; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">⚡ Volt-on-Call</a>
+            <nav class="nav-links">
+                <a href="index.html">Головна</a>
+                <a href="services.html">Послуги та автопарк</a>
+                <a href="pricing.html" class="active">Ціни</a>
+                <a href="order.html">Зробити запис</a>
+            </nav>
+        </div>
+    </header>
+<section class="pricing">
+        <div class="container">
+            <h1 class="title">Вартість <span>послуг</span></h1>
+            <p class="sub">Оберіть оптимальний пакет енергії для вашого авто</p>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <h3>Базовий виклик</h3>
+                        <div class="price">400 <span>грн</span></div>
+                        <p class="desc">Щоб швидко дістатися до найближчої станції</p>
+                        <ul>
+                            <li>Виїзд екіпажу по Києву</li>
+                            <li>До 5 кВт·год енергії</li>
+                            <li>Усі типи конекторів</li>
+                            <li>Прибуття до 30 хв</li>
+                        </ul>
+                    </div>
+                    <a href="order.html" class="btn">Замовити</a>
+                </div>
+                <div class="card hit">
+                    <div class="badge">Популярно</div>
+                    <div>
+                        <h3>Стандарт Плюс</h3>
+                        <div class="price">950 <span>грн</span></div>
+                        <p class="desc">Оптимальний запас ходу на весь день у місті</p>
+                        <ul>
+                            <li>Виїзд екіпажу по Києву</li>
+                            <li>До 15 кВт·год енергії</li>
+                            <li>Пріоритетна подача авто</li>
+                            <li>Діагностика зарядного порту</li>
+                        </ul>
+                    </div>
+                    <a href="order.html" class="btn">Замовити</a>
+                </div>
+                <div class="card">
+                    <div>
+                        <h3>Максимум Енергії</h3>
+                        <div class="price">1600 <span>грн</span></div>
+                        <p class="desc">Для авто з великими батареями та поїздок за місто</p>
+                        <ul>
+                            <li>Виїзд екіпажу по Києву</li>
+                            <li>До 30 кВт·год енергії</li>
+                            <li>Швидкісний порт DC</li>
+                            <li>Повний огляд батареї</li>
+                        </ul>
+                    </div>
+                    <a href="order.html" class="btn">Замовити</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Volt-on-Call. Усі права захищено. Автор проєкту: <strong>Левандович Анастасія</strong>.</p>
+        </div>
+    </footer>
+</body>
+</html>

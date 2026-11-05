@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Зробити запис | Volt-on-Call Київ</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        :root { --primary: #00ff66; --dark: #121212; --dark-card: #1e1e1e; --text: #ffffff; --text-muted: #a0a0a0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: var(--dark); color: var(--text); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        h1, .logo { font-family: 'Playfair Display', serif; font-weight: 700; }
+        header { background: rgba(18, 18, 18, 0.95); padding: 20px 0; border-bottom: 1px solid #2d2d2d; position: sticky; top: 0; z-index: 100; }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        .logo { font-size: 24px; color: var(--primary); text-decoration: none; text-transform: uppercase; }
+        .nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+        .nav-links a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        .order-sec { padding: 70px 0; text-align: center; }
+        .title { font-size: 38px; margin-bottom: 15px; }
+        .title span { color: var(--primary); font-style: italic; }
+        .sub { color: var(--text-muted); max-width: 600px; margin: 0 auto 35px; }
+        .form-box { max-width: 500px; margin: 0 auto; background: var(--dark-card); padding: 35px; border-radius: 15px; border: 1px solid #2d2d2d; text-align: left; }
+        .group { margin-bottom: 18px; }
+        label { display: block; margin-bottom: 6px; color: var(--text-muted); font-size: 14px; font-weight: 600; }
+        input, select { width: 100%; padding: 13px; background: var(--dark); border: 1px solid #444; border-radius: 8px; color: var(--text); font-size: 15px; }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .btn { width: 100%; background: var(--primary); color: var(--dark); padding: 15px; border: none; border-radius: 30px; font-size: 17px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: 0.2s; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 255, 102, 0.4); }
+        footer { background: #0b0b0b; padding: 35px 0; text-align: center; color: var(--text-muted); border-top: 1px solid #2d2d2d; margin-top: 50px; }
+        footer strong { color: var(--text); }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-wrapper">
+            <a href="index.html" class="logo">⚡ Volt-on-Call</a>
+            <nav class="nav-links">
+                <a href="index.html">Головна</a>
+                <a href="services.html">Послуги та автопарк</a>
+                <a href="cars.html">Авто та порти</a>
+                <a href="pricing.html">Ціни</a>
+                <a href="order.html" class="active">Зробити запис</a>
+            </nav>
+        </div>
+    </header>
+    <section class="order-sec">
+        <div class="container">
+            <h1 class="title">Зробити <span>запис на зарядку</span></h1>
+            <p class="sub">Заповніть форму нижче — екіпаж Volt-on-Call виїде у ваш район Києва протягом 2 хвилин після підтвердження.</p>
+
+            <form id="tg-form" class="form-box">
+                <div class="group">
+                    <label for="name">Ваше ім'я</label>
+                    <input type="text" id="name" required placeholder="Олександр">
+                </div>
+                <div class="group">
+                    <label for="phone">Номер телефону</label>
+                    <input type="tel" id="phone" required placeholder="+380">
+                </div>
+                <div class="group">
+                    <label for="car-type">Категорія авто та порт</label>
+                    <select id="car-type">
+                        <option>Легковий електромобіль (CCS2 / Type 2)</option>
+                        <option>Легковий електромобіль (GB/T Китай)</option>
+                        <option>Легковий електромобіль (CHAdeMO / США)</option>
+                        <option>Електричний позашляховик (SUV)</option>
+                        <option>Комерційний фургон / Бус</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="tariff">Бажаний тариф</label>
+                    <select id="tariff">
+                        <option>Базовий виклик (400 грн — до 5 кВт·год)</option>
+                        <option selected>Стандарт Плюс (950 грн — до 15 кВт·год)</option>
+                        <option>Максимум Енергії (1600 грн — до 30 кВт·год)</option>
+                    </select>
+                </div>
+                <div class="group">
+                    <label for="location">Ваш район у Києві</label>
+                    <select id="location">
+                        <option>Дарницький</option>
+                        <option>Печерський</option>
+                        <option>Голосіївський</option>
+                        <option>Шевченківський</option>
+                        <option>Подільський</option>
+                        <option>Оболонський</option>
+                        <option>Деснянський</option>
+                        <option>Дніпровський</option>
+                        <option>Святошинський</option>
+                        <option>Солом'янський</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">⚡ Викликати екіпаж</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Volt-on-Call. Усі права захищено. Автор проєкту: <strong>Левандович Анастасія</strong>.</p>
+        </div>
+    </footer>
+
+    <script>
+        const BOT_TOKEN = 'YOUR_BOT_TOKEN_HERE';
+        const CHAT_ID = 'YOUR_CHAT_ID_HERE';
+
+        document.getElementById('tg-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const car = document.getElementById('car-type').value;
+            const tariff = document.getElementById('tariff').value;
+            const loc = document.getElementById('location').value;
+
+            const text = `⚡️ Нова заявка Volt-on-Call!\n\n👤 Ім'я: ${name}\n📞 Телефон: ${phone}\n🚗 Авто: ${car}\n💳 Тариф: ${tariff}\n📍 Район: ${loc}\n\n📥 Для: @nastykss12`;
+
+            if (BOT_TOKEN === 'YOUR_BOT_TOKEN_HERE') {
+                alert(`Дякуємо, ${name}! Заявка (${tariff}) для району [${loc}] успішно сформована для @nastykss12.`);
+                this.reset();
+                return;
+            }
+
+            fetch(`https://telegram.org{BOT_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: text })
+            }).then(res => {
+                if (res.ok) {
+                    alert(`Дякуємо, ${name}! Заявка надіслана в Telegram.`);
+                    this.reset();
+                } else {
+                    alert('Помилка відправки. Перевірте токен бота.');
+                }
+            }).catch(() => alert('Помилка з\'єднання.'));
+        });
+    </script>
+</body>
+</html>
